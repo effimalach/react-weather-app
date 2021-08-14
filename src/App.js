@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import Forecast1Day from './Forecast1Day';
 
+
 import './App.css';
 
 
@@ -17,8 +18,10 @@ function App() {
   return (
     <div className="App">
       {weather.map((dayWeather,index)=> {
-         //  console.log(dayWeather[property])
-       return <Forecast1Day i={index} day={dayWeather.day} temperature={dayWeather.temperature} icon={dayWeather.icon} description={dayWeather.description} />
+  return(
+             <Forecast1Day key={index}  temperature={dayWeather.temperature} 
+             icon={dayWeather.icon} day={dayWeather.day}  description={dayWeather.description} />  
+  ) 
       })}
     </div>
   );
